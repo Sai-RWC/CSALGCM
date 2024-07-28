@@ -1,9 +1,7 @@
 package src;
 
-import java.util.Collections;
-
 // import src.BinaryHeap;
-import src.*;
+// import src.*;
 
 /**
  * driver
@@ -24,7 +22,7 @@ public class driver_extract {
 
     
 
-    ReadFile file = new ReadFile("./data/random100000_num.txt"); 
+    ReadFile file = new ReadFile("./data/random25000_num.txt"); 
 
     // GFG min_heap = new GFG(file.arrSize);
 
@@ -40,8 +38,8 @@ public class driver_extract {
         for (int i = 0; i < file.arrSize; i++) {
           heap.insert(file.arrIn[i]);
         }
-        // System.out.println("min: "+heap.extractMin());
         startTime = System.nanoTime();
+        System.out.println("min: "+heap.extractMin());
         // heap.printHeap();
         break;
 
@@ -52,8 +50,8 @@ public class driver_extract {
         }
         // long endTime = System.currentTimeMillis();
         // heapBinom.findMin();
-        // System.out.println("min: "+heapBinom.extractMin());
         startTime = System.nanoTime();
+        System.out.println("min: "+heapBinom.extractMin());
         break;
 
       case 2:
@@ -61,10 +59,8 @@ public class driver_extract {
           heap_fibo.insert(file.arrIn[i]);
         }
         // System.out.println("node_count:"+heap_fibo.nodeCount);
-        // System.out.println(heap_fibo.extractMin().key);
         startTime = System.nanoTime();
-        for (int i = 0; i < file.arrSize; i++) {
-        }
+        System.out.println(heap_fibo.extractMin().key);
           
         break;
 
@@ -76,7 +72,7 @@ public class driver_extract {
 
     long duration = endTime - startTime;
 
-    System.out.println("Insert operation took "+duration+"ns");
+    System.out.println("Extract operation took "+duration);
   }
 }
 

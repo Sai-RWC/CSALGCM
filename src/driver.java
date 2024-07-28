@@ -14,7 +14,7 @@ public class driver {
     // 0 => Binary Heap
     // 1 => Binomial Heap
     // 2 => Fibonacci Heap
-    int operation = 0;
+    int operation = 2;
 
     BinaryHeap heap = new BinaryHeap();
 
@@ -24,7 +24,7 @@ public class driver {
 
     
 
-    ReadFile file = new ReadFile("./data/random75000_num.txt"); 
+    ReadFile file = new ReadFile("./data/random100_num.txt"); 
     // GFG min_heap = new GFG(file.arrSize);
 
     FibonacciHeap heap_fibo = new FibonacciHeap();
@@ -71,6 +71,6 @@ public class driver {
 
     long duration = endTime - startTime;
 
-    System.out.println("Insert operation took "+duration+"ns");
+    System.out.println("Insert operation took "+duration);
   }
 }
