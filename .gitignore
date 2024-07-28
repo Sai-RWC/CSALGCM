@@ -1,3 +1,6 @@
 *.class
 read.py
 test.java
+out.txt
+src/*.bak
+MinHeap.java
