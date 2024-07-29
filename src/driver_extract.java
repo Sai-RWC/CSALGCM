@@ -12,25 +12,21 @@ public class driver_extract {
     // 0 => Binary Heap
     // 1 => Binomial Heap
     // 2 => Fibonacci Heap
-    int operation = 2;
+    int operation = 1;
 
+    // Initialize Binary Heap
     BinaryHeap heap = new BinaryHeap();
 
-    // file.printIn();
-
+    // Initialize Binomial Heap
     BinomialHeap heapBinom = new BinomialHeap();
 
-    
+    // Initialize ReadFile class
+    ReadFile file = new ReadFile("./data/random100_num.txt"); 
 
-    ReadFile file = new ReadFile("./data/random25000_num.txt"); 
-
-    // GFG min_heap = new GFG(file.arrSize);
-
+    // Import Fibonacci Heap
     FibonacciHeap heap_fibo = new FibonacciHeap();
+
     long startTime = System.nanoTime();
-
-
-    // System.out.println("size: "+file.arrSize);
 
     switch (operation) {
       case 0:
@@ -48,8 +44,6 @@ public class driver_extract {
         for (int i = 0; i < file.arrSize; i++) {
           heapBinom.insert(file.arrIn[i]);
         }
-        // long endTime = System.currentTimeMillis();
-        // heapBinom.findMin();
         startTime = System.nanoTime();
         System.out.println("min: "+heapBinom.extractMin());
         break;
@@ -58,7 +52,6 @@ public class driver_extract {
         for (int i = 0; i < file.arrSize; i++) {
           heap_fibo.insert(file.arrIn[i]);
         }
-        // System.out.println("node_count:"+heap_fibo.nodeCount);
         startTime = System.nanoTime();
         System.out.println(heap_fibo.extractMin().key);
           
@@ -67,8 +60,8 @@ public class driver_extract {
       default:
         break;
     }
-    long endTime = System.nanoTime();
 
+    long endTime = System.nanoTime();
 
     long duration = endTime - startTime;
 
